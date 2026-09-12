@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Living issue and evidence report for the Capital Investment Club Guest/Public Chrome UAT release gate." />
+    <title>Guest / Public · Chrome UAT findings</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2312211d'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='18' font-family='monospace' fill='white'%3ECIC%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=2" />
+  </head>
+  <body>
+    <a class="skip-link" href="#findings-list">Skip to findings</a>
+    <header class="topbar">
+      <a class="brand" href="https://github.com/capitalinvestmentclub/guest-public-uat-report">
+        <span class="brand-mark" aria-hidden="true">CIC</span>
+        <span><strong>Review record</strong><small>capitalinvestmentclub / webapp</small></span>
+      </a>
+      <div class="topbar-actions">
+        <button class="quiet-button" id="export-button" type="button">Export CSV</button>
+        <button class="primary-button" id="share-button" type="button">Copy view link</button>
+      </div>
+    </header>
+    <main>
+      <section class="overview" aria-labelledby="page-title">
+        <div class="overview-copy">
+          <p class="eyebrow">Guest / Public Chrome · Living review artifact</p>
+          <h1 id="page-title">Guest / Public go-live findings</h1>
+          <p class="lede">Every issue captured across 20 Guest/Public scenarios and six Chrome sizes, with original evidence, blocked lifecycle coverage, and a durable place for fixes and verification.</p>
+          <div class="metadata" id="metadata"></div>
+        </div>
+        <div class="release-signal" aria-label="Current release assessment">
+          <span class="signal-pulse" aria-hidden="true"></span>
+          <div><small>Release signal</small><strong>Not go-live ready</strong><span id="release-reason">Open critical and high-severity findings remain.</span></div>
+        </div>
+      </section>
+      <section class="metrics" aria-label="Finding summary">
+        <button class="metric" type="button" data-metric-filter="all"><strong id="metric-total">—</strong><span>Tracked</span></button>
+        <button class="metric metric-danger" type="button" data-metric-filter="urgent"><strong id="metric-urgent">—</strong><span>Critical + high</span></button>
+        <button class="metric" type="button" data-metric-filter="open"><strong id="metric-open">—</strong><span>Open</span></button>
+        <button class="metric metric-success" type="button" data-metric-filter="fixed"><strong id="metric-fixed">—</strong><span>Fixed</span></button>
+        <button class="metric" type="button" data-metric-filter="closed"><strong id="metric-closed">—</strong><span>Closed / clarified</span></button>
+      </section>
+      <section class="workspace" aria-label="Review workspace">
+        <aside class="filters" aria-label="Finding filters">
+          <div class="search-wrap"><label for="search">Search findings</label><input id="search" type="search" placeholder="ID, title, area…" autocomplete="off" /><kbd>/</kbd></div>
+          <fieldset><legend>Type</legend><div class="filter-options" id="type-filters"></div></fieldset>
+          <fieldset><legend>Status</legend><div class="filter-options" id="status-filters"></div></fieldset>
+          <fieldset><legend>Severity</legend><div class="filter-options" id="severity-filters"></div></fieldset>
+          <div class="filter-note">
+            <span class="mini-orbit" aria-hidden="true"></span>
+            <p><strong>Privacy-safe publication</strong> Detailed evidence remains in private webapp run records; credentials, tokens and private documents are excluded here.</p>
+            <a href="https://github.com/capitalinvestmentclub/guest-public-uat-report">Open report source →</a>
+          </div>
+        </aside>
+        <div class="results">
+          <div class="results-toolbar">
+            <div><p><strong id="result-count">—</strong> findings shown</p><span id="active-filter-copy">Full Guest/Public record</span></div>
+            <label class="sort-control" for="sort">Sort <select id="sort"><option value="severity">Severity</option><option value="id">Finding ID</option><option value="scenario">Scenario</option><option value="status">Status</option></select></label>
+          </div>
+          <div class="list-heading" aria-hidden="true"><span>Finding</span><span>Area</span><span>Status</span></div>
+          <div id="findings-list" class="findings-list" aria-live="polite"></div>
+          <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">∅</span><h2>No findings match this view</h2><p>Clear a filter or search for a different ID, title, or scenario.</p><button class="quiet-button" id="clear-filters" type="button">Clear filters</button></div>
+        </div>
+      </section>
+    </main>
+    <dialog id="finding-dialog" class="finding-dialog">
+      <div class="dialog-shell"><header class="dialog-header"><div><p id="dialog-kicker" class="eyebrow"></p><h2 id="dialog-title"></h2></div><button class="icon-button" id="dialog-close" type="button" aria-label="Close finding"><span aria-hidden="true">×</span></button></header><div id="dialog-content" class="dialog-content"></div></div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="data.js?v=2"></script>
+    <script src="app.js?v=2"></script>
+  </body>
+</html>
