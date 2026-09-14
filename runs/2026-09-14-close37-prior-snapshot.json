@@ -1,0 +1,460 @@
+{
+  "repairBatch": {
+    "runId": "2026-09-14-merged-deployed-repair",
+    "state": "MERGED AND LIVE — one targeted cloud refund retest passed; remaining cloud retests pending",
+    "executionMode": "real-api-local",
+    "browser": "Google Chrome",
+    "sizes": [
+      "360×800",
+      "390×844",
+      "768×1024",
+      "1024×768",
+      "1280×800",
+      "1440×900"
+    ],
+    "mergeStatus": "MERGED",
+    "deploymentStatus": "LIVE",
+    "cloudRetestStatus": "PARTIAL",
+    "frontendTests": "Final candidate: 632 suites / 4,943 tests passed; production build passed. Final original-refund real-API Chrome check passed at all six exact sizes.",
+    "apiTests": "Prior complete reconciliation: 468 suites / 5,565 assertions passed; latest API base and refund delta: 5 suites / 82 assertions passed. Separate runs, not one new full-suite execution.",
+    "scope": "Readiness update only. Existing deployed findings and per-size results below remain the last published cloud outcomes until exact-release browser retesting is supplied.",
+    "findings": [
+      {
+        "id": "PUB001-RESP-001",
+        "classification": "PRODUCT_FIX_LOCAL_VERIFIED",
+        "summary": "Changed behavior passed focused regression and real API-backed Chrome local checks at all six measured sizes.",
+        "cloudRetestStatus": "PENDING"
+      },
+      {
+        "id": "PUB002-SEARCH-001",
+        "classification": "PRODUCT_FIX_LOCAL_VERIFIED",
+        "summary": "Changed behavior passed focused regression and real API-backed Chrome local checks at all six measured sizes.",
+        "cloudRetestStatus": "PENDING"
+      },
+      {
+        "id": "PUB003-AUTH-001",
+        "classification": "PRODUCT_FIX_LOCAL_VERIFIED",
+        "summary": "Changed behavior passed focused regression and real API-backed Chrome local checks at all six measured sizes.",
+        "cloudRetestStatus": "PENDING"
+      }
+    ],
+    "updatedAt": "2026-09-14T18:36:19.438Z",
+    "candidates": {
+      "webapp": "b99da21cf757593a3f5419086022556b7965e9b3",
+      "webapi": "f11aba9330b84ee98e0e7f3188a2442b928e4aad"
+    },
+    "pullRequests": [
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapp/pull/2342",
+        "label": "Frontend PR #2342 — merged"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapi/pull/737",
+        "label": "API PR #737 — merged after review corrections"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapp/actions/runs/34880983295",
+        "label": "Frontend live promotion — success"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapi/actions/runs/34880842679",
+        "label": "API live promotion — success"
+      }
+    ],
+    "releaseGate": "Both exact merge commits are promoted live; promotion workflows succeeded. User-authorized approval-only override was used after required checks and concrete review corrections passed. New Chrome cloud acceptance is limited to GRT020-BAL-001 at all six measured sizes. Other prior cloud results remain unchanged; merged code alone does not close their findings.",
+    "mergeCommits": {
+      "webapp": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+      "webapi": "a86720f026956fa9a9e76e3f4bb23e5e02af445d"
+    },
+    "stagedDeployments": {
+      "webapp": {
+        "version": "auth-34878846169-1",
+        "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+        "workflow": "34878846169",
+        "status": "SUCCESS"
+      },
+      "webapi": {
+        "version": "policy-34880209047-1",
+        "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+        "workflow": "34880209047",
+        "status": "SUCCESS",
+        "policyParityMatched": true
+      }
+    },
+    "apiReviewDelta": "Final review corrections: 44 controller assertions and 66 organization assertions passed; three required API checks passed and zero unresolved review threads.",
+    "deployments": {
+      "webapp": {
+        "version": "auth-34878846169-1",
+        "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+        "promotionRun": "34880983295",
+        "status": "LIVE"
+      },
+      "webapi": {
+        "version": "policy-34880209047-1",
+        "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+        "promotionRun": "34880842679",
+        "status": "LIVE"
+      }
+    },
+    "cloudRetestSummary": "GRT020-BAL-001 PASS: original terminated grant shows its existing USD -1 refund, USD +1 contribution and zero available/current balance after reload. Six exact measured Chrome CSS viewports passed. No fresh financial transaction was executed; other cloud retests are pending."
+  },
+  "findings": [
+    {
+      "id": "PUB001-RESP-001",
+      "title": "Mobile public header omits essential navigation",
+      "status": "FAIL",
+      "summary": "Fresh signed-out landing-page inspection reproduces missing mobile header navigation. At 360 and 390 pixels only logo and Sign up render; no menu or Sign in. At 768 pixels Sign in renders but Products and Resources remain hidden without a menu. Desktop header controls render at 1024, 1280 and 1440 pixels.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "FAIL",
+          "summary": "Fresh signed-out landing-page inspection reproduces missing mobile header navigation. At 360 and 390 pixels only logo and Sign up render; no menu or Sign in. At 768 pixels Sign in renders but Products and Resources remain hidden without a menu. Desktop header controls render at 1024, 1280 and 1440 pixels.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "FAIL",
+          "summary": "Fresh signed-out landing-page inspection reproduces missing mobile header navigation. At 360 and 390 pixels only logo and Sign up render; no menu or Sign in. At 768 pixels Sign in renders but Products and Resources remain hidden without a menu. Desktop header controls render at 1024, 1280 and 1440 pixels.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "FAIL",
+          "summary": "Fresh signed-out landing-page inspection reproduces missing mobile header navigation. At 360 and 390 pixels only logo and Sign up render; no menu or Sign in. At 768 pixels Sign in renders but Products and Resources remain hidden without a menu. Desktop header controls render at 1024, 1280 and 1440 pixels.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "PARTIAL",
+          "summary": "Fresh signed-out landing-page inspection reproduces missing mobile header navigation. At 360 and 390 pixels only logo and Sign up render; no menu or Sign in. At 768 pixels Sign in renders but Products and Resources remain hidden without a menu. Desktop header controls render at 1024, 1280 and 1440 pixels.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "PARTIAL",
+          "summary": "Fresh signed-out landing-page inspection reproduces missing mobile header navigation. At 360 and 390 pixels only logo and Sign up render; no menu or Sign in. At 768 pixels Sign in renders but Products and Resources remain hidden without a menu. Desktop header controls render at 1024, 1280 and 1440 pixels.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "PARTIAL",
+          "summary": "Fresh signed-out landing-page inspection reproduces missing mobile header navigation. At 360 and 390 pixels only logo and Sign up render; no menu or Sign in. At 768 pixels Sign in renders but Products and Resources remain hidden without a menu. Desktop header controls render at 1024, 1280 and 1440 pixels.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Desktop dropdown and keyboard subchecks not yet executed; existing mobile failure is established. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "PUB002-SEARCH-001",
+      "title": "Public pitch search ignores the submitted query",
+      "status": "FAIL",
+      "summary": "Exact published-title search at 360, 768, 1024, 1280 and 1440 widths and a no-match Unicode query at 390 submit to /pitches?, clear the search input, and return Browse 33 pitches with unrelated cards. Fresh failure reproduced at every requested size.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "FAIL",
+          "summary": "Exact published-title search at 360, 768, 1024, 1280 and 1440 widths and a no-match Unicode query at 390 submit to /pitches?, clear the search input, and return Browse 33 pitches with unrelated cards. Fresh failure reproduced at every requested size.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "FAIL",
+          "summary": "Exact published-title search at 360, 768, 1024, 1280 and 1440 widths and a no-match Unicode query at 390 submit to /pitches?, clear the search input, and return Browse 33 pitches with unrelated cards. Fresh failure reproduced at every requested size.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "FAIL",
+          "summary": "Exact published-title search at 360, 768, 1024, 1280 and 1440 widths and a no-match Unicode query at 390 submit to /pitches?, clear the search input, and return Browse 33 pitches with unrelated cards. Fresh failure reproduced at every requested size.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "FAIL",
+          "summary": "Not inspected in this run.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "FAIL",
+          "summary": "Not inspected in this run.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "FAIL",
+          "summary": "Not inspected in this run.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Defect-focused search reproduction only; other filter combinations are outside this check. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "PUB003-AUTH-001",
+      "title": "Published pitch details are entirely authentication-gated",
+      "status": "FAIL",
+      "summary": "Opening the published INV-016 Bid Lifecycle pitch from the public catalog displays Sign in to view this pitch; no public narrative is exposed. Reproduced at all six sizes. Login/signup links preserve the pitch destination.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "FAIL",
+          "summary": "Opening the published INV-016 Bid Lifecycle pitch from the public catalog displays Sign in to view this pitch; no public narrative is exposed. Reproduced at all six sizes. Login/signup links preserve the pitch destination.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "FAIL",
+          "summary": "Opening the published INV-016 Bid Lifecycle pitch from the public catalog displays Sign in to view this pitch; no public narrative is exposed. Reproduced at all six sizes. Login/signup links preserve the pitch destination.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "FAIL",
+          "summary": "Opening the published INV-016 Bid Lifecycle pitch from the public catalog displays Sign in to view this pitch; no public narrative is exposed. Reproduced at all six sizes. Login/signup links preserve the pitch destination.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "FAIL",
+          "summary": "Opening the published INV-016 Bid Lifecycle pitch from the public catalog displays Sign in to view this pitch; no public narrative is exposed. Reproduced at all six sizes. Login/signup links preserve the pitch destination.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "FAIL",
+          "summary": "Opening the published INV-016 Bid Lifecycle pitch from the public catalog displays Sign in to view this pitch; no public narrative is exposed. Reproduced at all six sizes. Login/signup links preserve the pitch destination.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "FAIL",
+          "summary": "Opening the published INV-016 Bid Lifecycle pitch from the public catalog displays Sign in to view this pitch; no public narrative is exposed. Reproduced at all six sizes. Login/signup links preserve the pitch destination.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Draft, removed and unknown record privacy branches pending. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "PUB005-RENDER-001",
+      "title": "Public grant route renders a blank body",
+      "status": "PASS",
+      "summary": "Targeted blank-body regression passes: current open and closed public grants render complete content at all six sizes. A newly saved unpublished draft remains private with explicit unavailable state; malformed URL shows controlled recovery at all six sizes and after reload. Full-page open-grant images and recovery screenshots inspected.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "PASS",
+          "summary": "Targeted blank-body regression passes: current open and closed public grants render complete content at all six sizes. A newly saved unpublished draft remains private with explicit unavailable state; malformed URL shows controlled recovery at all six sizes and after reload. Full-page open-grant images and recovery screenshots inspected.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "PASS",
+          "summary": "Targeted blank-body regression passes: current open and closed public grants render complete content at all six sizes. A newly saved unpublished draft remains private with explicit unavailable state; malformed URL shows controlled recovery at all six sizes and after reload. Full-page open-grant images and recovery screenshots inspected.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "PASS",
+          "summary": "Targeted blank-body regression passes: current open and closed public grants render complete content at all six sizes. A newly saved unpublished draft remains private with explicit unavailable state; malformed URL shows controlled recovery at all six sizes and after reload. Full-page open-grant images and recovery screenshots inspected.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "PASS",
+          "summary": "Targeted blank-body regression passes: current open and closed public grants render complete content at all six sizes. A newly saved unpublished draft remains private with explicit unavailable state; malformed URL shows controlled recovery at all six sizes and after reload. Full-page open-grant images and recovery screenshots inspected.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "PASS",
+          "summary": "Targeted blank-body regression passes: current open and closed public grants render complete content at all six sizes. A newly saved unpublished draft remains private with explicit unavailable state; malformed URL shows controlled recovery at all six sizes and after reload. Full-page open-grant images and recovery screenshots inspected.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "PASS",
+          "summary": "Targeted blank-body regression passes: current open and closed public grants render complete content at all six sizes. A newly saved unpublished draft remains private with explicit unavailable state; malformed URL shows controlled recovery at all six sizes and after reload. Full-page open-grant images and recovery screenshots inspected.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "This PASS concerns public-page rendering/privacy, not contribution settlement or complete onboarding. Closed-grant enabled Apply remains separately failed under GRT011-CLOSED-001. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "PUB016-TOKEN-001",
+      "title": "Recovery can return an already-consumed token",
+      "status": "PARTIAL",
+      "summary": "Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Consumed-token replay is not passed; user handoff pending. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "PUB019-ENTRY-001",
+      "title": "Anonymous contribution has no rendered entry point",
+      "status": "PARTIAL",
+      "summary": "Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Controlled SMS endpoint requested from user; settlement, decline, cancel and replay untested. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "PUB020-ENTRY-001",
+      "title": "Guest-to-applicant lifecycle cannot start",
+      "status": "PARTIAL",
+      "summary": "Guest Apply preserved the selected grant in returnUrl and opened its application dialog immediately after controlled Pitcher login. Blank submission rejected. A synthetic draft with text/boolean answers persisted after reload, resumed with criteria version 1, and submitted once. Your applications (1) now shows Pending and Already Applied blocks duplicate entry.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Guest Apply preserved the selected grant in returnUrl and opened its application dialog immediately after controlled Pitcher login. Blank submission rejected. A synthetic draft with text/boolean answers persisted after reload, resumed with criteria version 1, and submitted once. Your applications (1) now shows Pending and Already Applied blocks duplicate entry. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Fresh signup/verification/KYC and grantor query/reply, six-size completed-state coverage remain pending. No award requested. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    }
+  ],
+  "browser": "Google Chrome",
+  "frontend": "https://planar-truck-361704.uc.r.appspot.com",
+  "api": "https://cicdevapi.uc.r.appspot.com",
+  "runId": "2026-09-14-retest45",
+  "state": "RETEST PARTIAL — all 45 dispositioned; incomplete workflows explicitly blocked or partial",
+  "updatedAt": "2026-09-14T07:08:29.535Z",
+  "scope": "Chrome-only targeted retest of the 45 originally unclosed critical/high defects. Dispositioned does not mean fully executed: blocked, partial and unexecuted viewport checks remain explicit. Historical campaign findings remain unchanged. Targeted PASS does not assert broader unexecuted lifecycle coverage."
+}
