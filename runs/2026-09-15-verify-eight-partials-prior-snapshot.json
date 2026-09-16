@@ -824,177 +824,159 @@
     {
       "id": "PUB016-TOKEN-001",
       "title": "Recovery can return an already-consumed token",
-      "status": "PASS",
-      "summary": "Shared fresh recovery evidence confirms that the deployed flow issues a new usable second-stage link and rejects exact replay after consumption. The reset form was usable at all six Chrome sizes and the resulting credential signed in successfully.",
-      "steps": [
-        "Requested a fresh recovery chain through the public login surface.",
-        "Consumed the first-stage and newly issued second-stage recovery links.",
-        "Verified the reset controls at all six required Chrome sizes.",
-        "Signed in with the resulting credential and replayed the consumed link.",
-        "Confirmed the replay returned Invalid or expired rather than reusing the token."
-      ],
+      "status": "PARTIAL",
+      "summary": "Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion.",
+      "steps": [],
       "responsive": [
         {
           "size": "360×800",
-          "status": "PASS",
-          "summary": "The new recovery link was usable and the exact consumed-token replay was rejected at this measured Chrome size.",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "390×844",
-          "status": "PASS",
-          "summary": "The new recovery link was usable and the exact consumed-token replay was rejected at this measured Chrome size.",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "768×1024",
-          "status": "PASS",
-          "summary": "The new recovery link was usable and the exact consumed-token replay was rejected at this measured Chrome size.",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "1024×768",
-          "status": "PASS",
-          "summary": "The new recovery link was usable and the exact consumed-token replay was rejected at this measured Chrome size.",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "1280×800",
-          "status": "PASS",
-          "summary": "The new recovery link was usable and the exact consumed-token replay was rejected at this measured Chrome size.",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "1440×900",
-          "status": "PASS",
-          "summary": "The new recovery link was usable and the exact consumed-token replay was rejected at this measured Chrome size.",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Fresh recovery email chain reaches a usable new-password form across six Chrome sizes. No consumed token exists yet because changing the credential requires user completion. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         }
       ],
       "evidence": [],
       "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
-      "limitations": "The Organization and Guest/Public findings share the same deployed recovery defect and acceptance evidence. Secret values and token URLs are not published.",
-      "sourceRun": "2026-09-15-verify-eight-partials",
-      "resultSource": "Live Chrome verification on the deployed application"
+      "limitations": "Consumed-token replay is not passed; user handoff pending. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
     },
     {
       "id": "PUB019-ENTRY-001",
       "title": "Anonymous contribution has no rendered entry point",
       "status": "PARTIAL",
-      "summary": "The public grant exposes both Apply and Fund controls at all six Chrome sizes. Fund opens a responsive Verify and fund dialog; blank amount and amount-only submissions are rejected with the correct amount and contact-verification guards. Checkout and settlement remain unexecuted.",
-      "steps": [
-        "Opened the controlled active grant while signed out.",
-        "Exercised Fund this grant and closed the dialog independently at all six measured Chrome sizes.",
-        "Confirmed the dialog and Verify details control were visible without page-level horizontal overflow.",
-        "Confirmed blank contribution rejection and the required email-and-phone guard after entering a positive amount."
-      ],
+      "summary": "Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent.",
+      "steps": [],
       "responsive": [
         {
           "size": "360×800",
           "status": "PARTIAL",
-          "summary": "Apply and Fund were reachable; the contribution dialog and verification control rendered without page overflow at this Chrome size. SMS and payment were not sent.",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "390×844",
           "status": "PARTIAL",
-          "summary": "Apply and Fund were reachable; the contribution dialog and verification control rendered without page overflow at this Chrome size. SMS and payment were not sent.",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "768×1024",
           "status": "PARTIAL",
-          "summary": "Apply and Fund were reachable; the contribution dialog and verification control rendered without page overflow at this Chrome size. SMS and payment were not sent.",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "1024×768",
           "status": "PARTIAL",
-          "summary": "Apply and Fund were reachable; the contribution dialog and verification control rendered without page overflow at this Chrome size. SMS and payment were not sent.",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "1280×800",
           "status": "PARTIAL",
-          "summary": "Apply and Fund were reachable; the contribution dialog and verification control rendered without page overflow at this Chrome size. SMS and payment were not sent.",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         },
         {
           "size": "1440×900",
           "status": "PARTIAL",
-          "summary": "Apply and Fund were reachable; the contribution dialog and verification control rendered without page overflow at this Chrome size. SMS and payment were not sent.",
+          "summary": "Rendered state inspected: Fund this grant opens guest contribution dialog at all six sizes. Blank, zero and negative amounts are rejected; positive 100 advances validation to required email/phone. No payment or verification message sent. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         }
       ],
       "evidence": [],
       "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
-      "limitations": "No controlled SMS inbox/number and payment sandbox settlement path is available. No verification message, payment, decline, cancellation, callback, receipt, or replay was triggered.",
-      "sourceRun": "2026-09-15-verify-eight-partials",
-      "resultSource": "Live Chrome verification on the deployed application"
+      "limitations": "Controlled SMS endpoint requested from user; settlement, decline, cancel and replay untested. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
     },
     {
       "id": "PUB020-ENTRY-001",
       "title": "Guest-to-applicant lifecycle cannot start",
       "status": "PARTIAL",
-      "summary": "Guest Apply preserved the selected grant in returnUrl and automatically reopened the application dialog after controlled login. A previously submitted controlled application remains Pending, and the Already Applied duplicate guard plus the submitted application row render correctly at all six Chrome sizes.",
-      "steps": [
-        "Opened the active public grant signed out and selected Apply for this grant.",
-        "Confirmed login preserved the exact grant destination and apply intent.",
-        "Signed in with a controlled eligible applicant and confirmed the application dialog resumed automatically.",
-        "Read back the existing submitted application and its Pending state.",
-        "Verified the Already Applied guard and submitted application row at all six Chrome sizes."
-      ],
+      "summary": "Guest Apply preserved the selected grant in returnUrl and opened its application dialog immediately after controlled Pitcher login. Blank submission rejected. A synthetic draft with text/boolean answers persisted after reload, resumed with criteria version 1, and submitted once. Your applications (1) now shows Pending and Already Applied blocks duplicate entry.",
+      "steps": [],
       "responsive": [
         {
           "size": "360×800",
-          "status": "PARTIAL",
-          "summary": "The Pending application, amount, withdrawal action, and disabled Already Applied duplicate guard were visible without page overflow at this Chrome size.",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
           "evidence": []
         },
         {
           "size": "390×844",
-          "status": "PARTIAL",
-          "summary": "The Pending application, amount, withdrawal action, and disabled Already Applied duplicate guard were visible without page overflow at this Chrome size.",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
           "evidence": []
         },
         {
           "size": "768×1024",
-          "status": "PARTIAL",
-          "summary": "The Pending application, amount, withdrawal action, and disabled Already Applied duplicate guard were visible without page overflow at this Chrome size.",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
           "evidence": []
         },
         {
           "size": "1024×768",
-          "status": "PARTIAL",
-          "summary": "The Pending application, amount, withdrawal action, and disabled Already Applied duplicate guard were visible without page overflow at this Chrome size.",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
           "evidence": []
         },
         {
           "size": "1280×800",
-          "status": "PARTIAL",
-          "summary": "The Pending application, amount, withdrawal action, and disabled Already Applied duplicate guard were visible without page overflow at this Chrome size.",
+          "status": "NOT RUN",
+          "summary": "No new per-size outcome supplied.",
           "evidence": []
         },
         {
           "size": "1440×900",
           "status": "PARTIAL",
-          "summary": "The Pending application, amount, withdrawal action, and disabled Already Applied duplicate guard were visible without page overflow at this Chrome size.",
+          "summary": "Rendered state inspected: Guest Apply preserved the selected grant in returnUrl and opened its application dialog immediately after controlled Pitcher login. Blank submission rejected. A synthetic draft with text/boolean answers persisted after reload, resumed with criteria version 1, and submitted once. Your applications (1) now shows Pending and Already Applied blocks duplicate entry. No independent per-size workflow acceptance outcome supplied.",
           "evidence": []
         }
       ],
       "evidence": [],
       "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
-      "limitations": "A fresh signup/KYC branch and the grant-owner query plus applicant reply branch were not completed. The exact grant-owner credential is not available in the controlled Chrome profile, and no synthetic application was resubmitted.",
-      "sourceRun": "2026-09-15-verify-eight-partials",
-      "resultSource": "Live Chrome verification on the deployed application"
+      "limitations": "Fresh signup/verification/KYC and grantor query/reply, six-size completed-state coverage remain pending. No award requested. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
     }
   ],
   "browser": "Google Chrome",
   "frontend": "https://planar-truck-361704.uc.r.appspot.com",
   "api": "https://cicdevapi.uc.r.appspot.com",
-  "runId": "2026-09-15-verify-eight-partials",
-  "state": "PARTIAL VERIFICATION — 8 CRITICAL FINDINGS",
-  "updatedAt": "2026-09-16T00:57:50Z",
-  "scope": "Fresh deployed Chrome verification of the eight findings that were previously PARTIAL. Exact six-size results are recorded where exercised; missing external prerequisites and reproduced failures remain explicit.",
-  "publicationNote": "This run preserves prior history and updates only the eight requested findings. Sensitive credentials, tokens, mailbox content, identity documents, signed URLs, and internal financial identifiers are withheld."
+  "runId": "2026-09-14-close37",
+  "state": "RETEST PARTIAL — completed targeted batch published; remaining findings retain their latest recorded outcomes",
+  "updatedAt": "2026-09-14T20:08:09.142Z",
+  "scope": "Chrome-only targeted defect acceptance on the recorded deployed versions. New results are limited to explicitly supplied findings and six measured CSS sizes. Historical scenarios and unexecuted lifecycle branches are not promoted to PASS."
 }
