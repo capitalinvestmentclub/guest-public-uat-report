@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-17-defect-batch-deployed-retest",
+  "state": "COMPLETE",
+  "completedAt": "2026-09-18T10:10:00Z",
+  "environment": {
+    "frontend": {
+      "url": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com",
+      "version": "auth-35306705473-1",
+      "mergeCommit": "d8777aae575f942514538381d54d3715aabf4b8c",
+      "trafficPromoted": false
+    },
+    "api": {
+      "url": "https://cicdevapi.uc.r.appspot.com",
+      "mergeCommit": "46a098ebcdcdebac39d1ba73569c793cd70a72fb",
+      "health": "/api/v1/health",
+      "postMergeTestRisk": "5 suites and 7 tests failed in workflow run 35281782628."
+    },
+    "notificationservice": {
+      "mergeCommit": "08b76889070663f7e7d57cad2003d5cd87378340"
+    }
+  },
+  "scope": {
+    "sourceFindingCount": 276,
+    "sourceRegisterSha256": "ab4d22a0e2082c3fd3c8ccca8533ff5e0e8b63a8c1b6e9c7d23ff2606eda03ee",
+    "uniqueScenarioFamilies": 96,
+    "browser": "Chrome",
+    "defaultViewport": "1792x976",
+    "viewportPolicy": "One representative desktop viewport unless the finding concerns responsiveness or the observed behavior warrants expansion.",
+    "mergePolicy": "Keep report changes local until every finding is PASS, FAIL, BLOCKED, OBSOLETE, DUPLICATE_COVERAGE, or PASSED_OVER."
+  },
+  "group": "Guest / Public",
+  "summary": {
+    "total": 4,
+    "FAIL": 1,
+    "PASS": 1,
+    "PASSED_OVER": 2
+  },
+  "findings": [
+    {
+      "id": "PUB006-PROFILE-001",
+      "group": "Guest / Public",
+      "scenarioId": "PUB-006",
+      "severity": "MEDIUM",
+      "title": "Public creator links redirect guests to Login",
+      "status": "FAIL",
+      "disposition": "REPRODUCED_ON_DEPLOYED_CANDIDATE",
+      "testedAt": "2026-09-18T05:18:36.000Z",
+      "browser": "Chrome",
+      "viewport": "1792x976",
+      "targetUrl": "https://planar-truck-361704.uc.r.appspot.com/login?returnUrl=%2Fuser%2F6aa36ded5b99bdd47f874365",
+      "apiUrl": "https://cicdevapi.uc.r.appspot.com",
+      "evidence": [
+        "evidence/guest-public/PUB-006/PUB006-redirected-to-login-1792x976.png",
+        "evidence/guest-public/PUB-006/PUB006-result.json"
+      ],
+      "notes": "The real public catalog rendered an active published grant and creator link; Clicking the creator link opened the default app host rather than remaining on the candidate host; The signed-out destination redirected to Login with the intended public profile in returnUrl; The privacy-safe public profile was not rendered"
+    },
+    {
+      "id": "PUB007-COVERAGE-001",
+      "group": "Guest / Public",
+      "scenarioId": "PUB-007–014",
+      "severity": "HIGH",
+      "title": "Role, biodata and verification branches remain behind account creation",
+      "status": "PASSED_OVER",
+      "disposition": "PASSED_OVER_MISSING_RUN_SCOPED_FIXTURES",
+      "testedAt": "2026-09-18T05:20:00.000Z",
+      "browser": "Chrome",
+      "viewport": "1792x976",
+      "targetUrl": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com",
+      "apiUrl": "https://cicdevapi.uc.r.appspot.com",
+      "evidence": [
+        "evidence/coverage-passovers/known-fixture-gaps-result.json"
+      ],
+      "notes": "These four entries are coverage gaps rather than isolated product defects; The required disposable verified accounts, allowed/restricted identity pair, and complete organization lifecycle fixtures are not configured in the retest environment; No approved mailbox or lifecycle reset capability is exposed to this run; No product pass is claimed; each entry is terminally passed over with its prerequisite gap retained"
+    },
+    {
+      "id": "PUB013-DRAFT-001",
+      "group": "Guest / Public",
+      "scenarioId": "PUB-013",
+      "severity": "MEDIUM",
+      "title": "Auto-restored signup drafts have no Resume or Discard controls",
+      "status": "PASS",
+      "disposition": "VERIFIED_FIXED_DEPLOYED",
+      "testedAt": "2026-09-18T05:16:08.792Z",
+      "browser": "Chrome",
+      "viewport": "1792x976",
+      "targetUrl": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com/signup",
+      "apiUrl": "https://cicdevapi.uc.r.appspot.com",
+      "evidence": [
+        "evidence/shared/signup-draft/signup-draft-explicit-decision-1792x976.png",
+        "evidence/shared/signup-draft/signup-draft-result.json"
+      ],
+      "notes": "Real deployed draft API persists non-secret signup data; Reload hides PII until Resume signup is selected; Resume and Discard draft controls are visible and functional; A separate Chrome context cannot see the draft or its PII; Discard removes restored values and the recovery controls; No observed request returned 5xx"
+    },
+    {
+      "id": "PUB017-COVERAGE-001",
+      "group": "Guest / Public",
+      "scenarioId": "PUB-017",
+      "severity": "MEDIUM",
+      "title": "Allowed/restricted account pair was not available",
+      "status": "PASSED_OVER",
+      "disposition": "PASSED_OVER_MISSING_RUN_SCOPED_FIXTURES",
+      "testedAt": "2026-09-18T05:20:00.000Z",
+      "browser": "Chrome",
+      "viewport": "1792x976",
+      "targetUrl": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com",
+      "apiUrl": "https://cicdevapi.uc.r.appspot.com",
+      "evidence": [
+        "evidence/coverage-passovers/known-fixture-gaps-result.json"
+      ],
+      "notes": "These four entries are coverage gaps rather than isolated product defects; The required disposable verified accounts, allowed/restricted identity pair, and complete organization lifecycle fixtures are not configured in the retest environment; No approved mailbox or lifecycle reset capability is exposed to this run; No product pass is claimed; each entry is terminally passed over with its prerequisite gap retained"
+    }
+  ]
+}
